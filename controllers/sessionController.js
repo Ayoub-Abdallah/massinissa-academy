@@ -1,5 +1,5 @@
 const Group = require("../models/group");
-const Sessions = require("../models/Sessions");
+const Sessions = require("../models/sessions");
 
 exports.getSessions = async (req, res) => {
     try {
