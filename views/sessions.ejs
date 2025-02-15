@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KMA | Admin</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=stacked_bar_chart" />
+    <script src="https://kit.fontawesome.com/c352df61bb.js" crossorigin="anonymous"></script>
+    <link href="assets/style.css" rel="stylesheet" />
+    <script src="assets/sessionPageController.js" defer></script>
+    <style>
+       .schedule-container {
+  overflow-x: auto;
+}
+
+#sessionSchedule {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#sessionSchedule th, #sessionSchedule td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  min-width: 120px;
+}
+
+.session-cell {
+  background-color: #1c8cdc;
+  position: relative;
+  cursor: pointer;
+}
+
+.tooltip {
+  position: fixed;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  pointer-events: none;
+  z-index: 1000;
+}
+.add-sessions-btn{
+            background-color: #218db8;
+            padding: 10px 20px;
+            border-radius: 6px;
+            color: white;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <img src="assets/images/Massinissa.png" class="logo" />
+           
+        </div>
+    </nav>
+    <!-- End of Navbar -->
+    <main>
+        <aside>
+            <button id="close-btn">
+                <span class="material-icons">close</span>
+            </button>
+            <div class="sidebar">
+                <a href="/admin">
+                    <span class="material-icons">dashboard</span>
+                    <h4>Dashboard</h4>
+                </a>
+                <a href="/students">
+                    <span class="material-icons">school</span>
+                    <h4>Étudiants</h4>
+                </a>
+                <a href="/teachers">
+                    <span class="material-icons">person</span>
+                    <h4>Enseignants</h4>
+                </a>
+                <a href="/groups">
+                    <span class="material-icons">group</span>
+                    <h4>Groupes</h4>
+                </a>
+                <a href="/sessions" class="active">
+                    <span class="material-symbols-outlined">
+                        stacked_bar_chart
+                    </span>
+                    <h4>Sessions</h4>
+                </a>
+                <a href="/classrooms">
+                    <span class="material-icons">class</span>
+                    <h4>Salles de classe</h4>
+                </a>
+                <a href="/finance">
+                    <span class="material-icons">attach_money</span>
+                    <h4>Finance</h4>
+                </a>
+
+                <!-- <a href="attendance">
+                    <span class="material-icons">check_circle</span>
+                    <h4>Présence</h4>
+                </a> -->
+                <a href="/settings">
+                    <span class="material-icons">settings</span>
+                    <h4>Paramètres</h4>
+                </a>
+            </div>
+            <!-- End of sidebar -->
+
+            <!-- <div class="updates">
+                      <span class="material-icons">update</span>
+                      <h4>Updates Available</h4>
+                      <p>Security Updates</p>
+                      <p>General Updates</p>
+                      <a href="#">Update Now</a>
+                  </div> -->
+        </aside>
+        <!-- End of aside -->
+
+        <section class="middle">
+            <div class=" header">
+                <h1>Scéancesss</h1>
+            </div>
+            <div class="tools">
+                <div>
+                    <a class="add-sessions-btn" href="sessions/add-session" onclick="activateTab(0)">
+                       Add Sessions
+                    </a>
+                    
+                </div>
+            </div>
+
+            <div class="schedule-container">
+                <table id="sessionSchedule">
+                  <thead>
+                    <tr id="scheduleHeaders"></tr>
+                  </thead>
+                  <tbody id="scheduleBody"></tbody>
+                </table>
+                <div id="sessionTooltip" class="tooltip"></div>
+              </div>
+
+            <!-- <div id="example3.1" class="example3" style="width: 100%; height: 700px;"></div> -->
+
+
+
+
+
+        </section>
+        <!-- End of Middle -->
+        <!-- <form class="back-cover add-sessions-cover">
+            <div class="form-container add-sessions">
+                 -->
+        <!-- Edit group start -->
+
+       
+        <!-- Edit group end -->
+        <!-- delete group end -->
+        <!-- <div class="back-cover deleteGroup ">
+            <div class="form-container delete_student-cover">
+                <h2>are you sure wanna delete this Groups?</h2>
+                <p>This action will delete the group's data permenantly</p>
+                <div class="btncont">
+                    <button onclick="deactivateTabs(3)" type="button">Annuler</button>
+                    <button type="button" onclick="handleDelete()">Enregistrer</button>
+                </div>
+            </div>
+        </div> -->
+        <!-- delete group end -->
+
+        <!-- End of right -->
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
+        integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script src="assets/loadChart.js"></script>
+    <script src="assets/main.js"></script>
+
+    <!-- End of Main -->
+</body>
+
+</html>
